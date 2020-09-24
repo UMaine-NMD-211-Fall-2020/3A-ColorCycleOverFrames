@@ -8,10 +8,13 @@ In this lab we track the passage of time by looping colors over changing frames.
 - If statements
 - (Optional) Make colors change over an object
 
-### Turn In
-A variation of my code, that shows you played with the values. 
-
-
+## Turn In
+A variation of my code, that shows you played with the values. This variation should include
+- color changing background over time ... need not be continuous
+- some sort of color changing shape, not synchronized with the background and shape. This may mean you need a second rate of change
+- some sort of color changing outline, not synchronized with the background, can be synchronized with the shape
+- extra (disappearing or appearing elements, such as a square that is only around part of the time)
+It's probably a good idea to use objects/ classes for parts of this.
 ## Setup Code
 1. Start your file
 ```processing
