@@ -15,7 +15,8 @@ A variation of my code, that shows you played with the values. This variation sh
 - some sort of color changing outline, not synchronized with the background, can be synchronized with the shape
 - extra (disappearing or appearing elements, such as a square that is only around part of the time)
 It's probably a good idea to use objects/ classes for parts of this.
-## Setup Code
+## Constructing Code
+### Setup Code
 1. Start your file
 ```processing
 /*  Lab 2B - NMD 211
@@ -27,8 +28,29 @@ It's probably a good idea to use objects/ classes for parts of this.
     - Systematically loop through colors over frames, changing one value at a time
 */
 ```
+Add whatever else you think is relevant to your introductory comment section.
+This includes: what your code does, anything special, what you didn't understand, if you referenced certain code
+2. Initialize your file, with a setup function and a draw function.
+``` processing
+/*  Lab 2B - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    background( 0 , 0 , 0 );
+}
+```
+### Cycling Through Colors
 ## FURTHER STEPS TO BE ADDED TOMORROW
-## End Code
+## Katarina's End Code
 ```processing
 int r;
 int g;
