@@ -14,6 +14,7 @@ A variation of my code, that shows you played with the values. This variation sh
 - some sort of color changing shape, not synchronized with the background and shape. This may mean you need a second rate of change
 - some sort of color changing outline, not synchronized with the background, can be synchronized with the shape
 - extra (disappearing or appearing elements, such as a square that is only around part of the time)
+
 It's probably a good idea to use objects/ classes for parts of this.
 ## Constructing Code
 ### Setup Code
@@ -293,4 +294,7 @@ void blueDownCycle(){
 }
 ```
 
+## Submit Via Github
+For those of you who want to submit this lab via Github, submit below by adding a link to your github repository for the lab. 
+- [Lab3A-FirstNameLastName](http://example.com)
 
