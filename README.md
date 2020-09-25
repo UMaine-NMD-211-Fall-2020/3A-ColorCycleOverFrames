@@ -19,7 +19,7 @@ It's probably a good idea to use objects/ classes for parts of this.
 ### Setup Code
 1. Start your file
 ```processing
-/*  Lab 2B - NMD 211
+/*  Lab 3A - NMD 211
     FirstName LastName
     September 23, 2020
     
@@ -32,7 +32,7 @@ Add whatever else you think is relevant to your introductory comment section.
 This includes: what your code does, anything special, what you didn't understand, if you referenced certain code
 2. Initialize your file, with a setup function and a draw function.
 ``` processing
-/*  Lab 2B - NMD 211
+/*  Lab 3A - NMD 211
     FirstName LastName
     September 23, 2020
     
@@ -48,9 +48,140 @@ void draw(){
     background( 0 , 0 , 0 );
 }
 ```
+### About passage of time
+One way to count time in processing is by the number of frames that has passed. 
+Each run through draw is one frame. 
+We will make a counter that counts the number of runs through draw, to show the passage of time. 
+
+3. We need to add a variable that keeps track of time.
+``` processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+
+// --- CHANGE HERE
+int framesSeen = 0;
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    background( 0 , 0 , 0 );
+}
+```
+4. Increment the counter (add one to the counter each pass through draw).
+``` processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+
+// --- CHANGE HERE
+int framesSeen = 0;
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    background( 0 , 0 , 0 );
+    
+    framesSeen += 1;            // increase the number of frames seen
+    print( framesSeen , "\n");  // show number of frames seen
+}
+```
+### If Statements & Color changes
+Using an if statement, along with else if and else, we can have colors change once we reach a certain number of frames seen.
+5. When we have seen more than 500 frames,  change the background color.
+``` processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+
+// --- CHANGE HERE
+int framesSeen = 0;
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    
+    if (framesSeen < 500 ){
+        background( 0 , 0 , 0 );
+    }
+    else {
+        background( 255, 255, 0 );
+    }
+    
+    framesSeen += 1;            // increase the number of frames seen
+    print( framesSeen , "\n");  // show number of frames seen
+}
+```
 ### Cycling Through Colors
+We use a combination of if statements and incrementing variables to cycle through the colors. 
+6. 
+``` processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+
+// --- CHANGE HERE
+int framesSeen = 0;
+
+int backgroundRed = 0;
+int backgroundGreen = 0;
+int backgroundBlue = 0;
+
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    
+    if (framesSeen < 500 ){
+        background( backgroundRed , 0 , 0 );
+    }
+    else {
+        background( 0 );
+    }
+    
+    // incrementations
+    framesSeen += 1;            // increase the number of frames seen
+    backgroundRed += 1;         // increase the red value each run
+}
+```
+This increments us through red, but it goes past the maximum value of red, so we may have problems later if we want to decrease the red value.
+Therefore, we construct a function that only increases red to the maximum of 255, and use that. 
+
 ## FURTHER STEPS TO BE ADDED TOMORROW
-## Katarina's End Code
+## Katarina's Example 2 End Code
+This code only shows how to loop through colors. 
 ```processing
 int r;
 int g;
