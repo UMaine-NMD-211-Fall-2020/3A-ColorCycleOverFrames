@@ -179,10 +179,165 @@ void draw(){
 ```
 This increments us through red, but it goes past the maximum value of red, so we may have problems later if we want to decrease the red value.
 Therefore, we construct a function that only increases red to the maximum of 255, and use that. 
+7. Add the function that increases red to it's maximum value, then stops. 
+```processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
 
-## FURTHER STEPS TO BE ADDED TOMORROW
+// --- CHANGE HERE
+int framesSeen = 0;
+
+int backgroundRed = 0;
+int backgroundGreen = 0;
+int backgroundBlue = 0;
+
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    
+    if (framesSeen < 500 ){
+        background( backgroundRed , 0 , 0 );
+        
+        redUpCycle();
+    }
+    else {
+        background( 0 );
+    }
+    
+    // incrementations
+    framesSeen += 1;            // increase the number of frames seen
+}
+
+/* HELPER FUNCTIONS */
+void redUpCycle(){
+  if (backgroundRed < 255){
+    backgroundRed += 1 ;
+  }
+}
+```
+8. After increasing the red value, you can decrease it too, with a function that decreases until you hit the minimum red value. 
+```processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+
+// --- CHANGE HERE
+int framesSeen = 0;
+
+int backgroundRed = 0;
+int backgroundGreen = 0;
+int backgroundBlue = 0;
+
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    
+    if (framesSeen < 500 ){
+        background( backgroundRed , 0 , 0 );
+        
+        redUpCycle();
+    }
+    else {
+        background( backgroundRed , 0 , 0);
+        
+        redDownCycle();
+    }
+    
+    // incrementations
+    framesSeen += 1;            // increase the number of frames seen
+}
+
+/* HELPER FUNCTIONS */
+void redUpCycle(){
+  if (backgroundRed < 255){
+    backgroundRed += 1 ;
+  }
+}
+
+void redDownCycle(){
+  if (backgroundRed > 0){
+    backgroundRed -= 1 ;
+  }
+}
+```
+This process can be repeated with the green and blue fill values, and with this, we can cycle smoothly through the colors.
+9. If we want to repeat a cycle, use modular arithmetic. 
+```processing
+/*  Lab 3A - NMD 211
+    FirstName LastName
+    September 23, 2020
+    
+    
+    Color Cycle Lab
+    - Systematically loop through colors over frames, changing one value at a time
+*/
+
+int framesSeen = 0;
+
+int cycleLength = 1000; // # of frames until pattern repeats
+
+int backgroundRed = 0;
+int backgroundGreen = 0;
+int backgroundBlue = 0;
+
+// --- END CHANGE
+
+void setup(){
+    size( 500 , 500 );
+}
+
+void draw(){
+    
+    if (framesSeen % cycleLength < 500 ){
+        background( backgroundRed , 0 , 0 );
+        
+        redUpCycle();
+    }
+    else {
+        background( backgroundRed , 0 , 0);
+        
+        redDownCycle();
+    }
+    
+    // incrementations
+    framesSeen += 1;            // increase the number of frames seen
+}
+
+/* HELPER FUNCTIONS */
+void redUpCycle(){
+  if (backgroundRed < 255){
+    backgroundRed += 1 ;
+  }
+}
+
+void redDownCycle(){
+  if (backgroundRed > 0){
+    backgroundRed -= 1 ;
+  }
+}
+```
+That's it! Using these techniques, we can cycle through any set of colors smoothly and repeatedly. 
 ## Katarina's Example 2 End Code
-This code only shows how to loop through colors. 
+This is an example of looping through many colors. 
 ```processing
 int r;
 int g;
