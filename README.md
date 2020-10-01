@@ -452,4 +452,5 @@ void blueDownCycle(){
 ## Submit Via Github
 For those of you who want to submit this lab via Github, submit below by adding a link to your github repository for the lab. 
 - [Lab3A-FirstNameLastName](http://example.com)
+- [Lab3A-ElijahStory](https://github.com/ElijahStory/Lab3-Elijah-Story/tree/master/Lab3A_Elijah_Story)
 
